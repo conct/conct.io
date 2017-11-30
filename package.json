@@ -1,0 +1,23 @@
+{
+  "name": "conct.io",
+  "version": "0.0.3",
+  "description": "conct.io Engine",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conct/conct.io.git"
+  },
+  "dependencies": {
+	"jquery": "^3.2.1",
+	"conct-socket": "^0.0.1"
+  },
+  "author": "Daniel von Lühmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conct/conct.io/issues"
+  },
+  "homepage": "https://github.com/conct/conct.io#readme"
+}
