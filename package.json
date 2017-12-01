@@ -1,7 +1,7 @@
 {
   "name": "conct.io",
-  "version": "0.0.13",
-  "description": "conct.io Engine",
+  "version": "0.3.0",
+  "description": "Engine",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,3 +17,4 @@
   },
   "homepage": "https://github.com/conct/conct.io#readme"
 }
+
