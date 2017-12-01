@@ -1,8 +1,8 @@
 {
   "name": "conct.io",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "description": "conct.io Engine",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/conct/conct.io.git"
   },
   "dependencies": {
-	"conct-socket": "^0.0.7"
+	"conct-socket": "^0.1.2"
   },
   "author": "Daniel von Lühmann",
   "license": "MIT",
