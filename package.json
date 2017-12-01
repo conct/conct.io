@@ -1,6 +1,6 @@
 {
   "name": "conct.io",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "conct.io Engine",
   "main": "lib/index.js",
   "scripts": {
