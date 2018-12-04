@@ -6,7 +6,7 @@ CMS
 
 ## Installation
 
-  `npm i @conct/conct.io`
+  `npm i conct.io`
 
 ## Usage
 
