@@ -1,6 +1,6 @@
 {
   "name": "conct.io",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "CSM Engine",
   "main": "lib/index.js",
   "scripts": {
