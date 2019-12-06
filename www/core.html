@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{page.language}}">
+
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 	<title>{{page.title}}</title>
-	
+
 	<meta charset="utf-8" />
-	<meta name="robots" content="noimageindex, {{#if page.root}}noindex, follow{{else}}{{#if (strpos page.file 'imprint, privacy')}}noindex, follow{{else}}index, follow{{/if}}{{/if}}" />
+	<meta name="robots"
+		content="noimageindex, {{#if page.root}}noindex, follow{{else}}{{#if (strpos page.file 'imprint, privacy')}}noindex, follow{{else}}index, follow{{/if}}{{/if}}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
 	<meta name="description" content="{{page.description}}" />
 	<meta name="copyright" content="conct Softwaredesign - conct.de" />
@@ -13,274 +15,288 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:description" content="" />
 	<meta property="og:image" content="https://{{page.host}}/img/{{page.label}}" />
-	<meta property="og:url" content="https://{{page.host}}/{{page.language}}{{#if page.canonical}}/{{page.canonical}}{{else}}{{#if (compare page.file '!=' '/')}}/{{page.file}}{{/if}}{{#if page.param}}/{{page.param}}{{/if}}{{/if}}" />
+	<meta property="og:url"
+		content="https://{{page.host}}/{{page.language}}{{#if page.canonical}}/{{page.canonical}}{{else}}{{#if (compare page.file '!=' '/')}}/{{page.file}}{{/if}}{{#if page.param}}/{{page.param}}{{/if}}{{/if}}" />
 	<meta property="fb:app_id" content="" />
-	
-	<link rel="canonical" href="https://{{page.host}}/{{page.language}}{{#if page.canonical}}/{{page.canonical}}{{else}}{{#if (compare page.file '!=' '/')}}/{{page.file}}{{/if}}{{#if page.param}}/{{page.param}}{{/if}}{{/if}}" />
+
+	<link rel="canonical"
+		href="https://{{page.host}}/{{page.language}}{{#if page.canonical}}/{{page.canonical}}{{else}}{{#if (compare page.file '!=' '/')}}/{{page.file}}{{/if}}{{#if page.param}}/{{page.param}}{{/if}}{{/if}}" />
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
-	{{#if page.android}}<link rel="shortcut icon" href="data:image/png;base64,{{page.android}}" sizes="196x196" />{{/if}}
-	{{#if page.ios}}<link rel="apple-touch-icon" href="data:image/png;base64,{{page.ios}}" sizes="196x196" />{{/if}}
-	
+	{{#if page.android}}
+	<link rel="shortcut icon" href="data:image/png;base64,{{page.android}}" sizes="196x196" />{{/if}}
+	{{#if page.ios}}
+	<link rel="apple-touch-icon" href="data:image/png;base64,{{page.ios}}" sizes="196x196" />{{/if}}
+
 	<style>
-	iframe {
-		border:2px solid red;
-	}
-	:root {
-		--primary: #424242;
-		--accent: #D50000;
-		--dark: #212121;
-		--light: #ffffff;
-	}
-	
-	.mdi {
-		font-style: normal;
-	}
-	
-	.text-light {
-		color: var(--light) !important;
-	}
-	
-	.text-dark {
-		color: var(--primary) !important;
-	}
-	
-	.text-accent {
-		color: var(--accent) !important;
-	}
-	
-	.bg-primary {
-		background-color: var(--primary) !important;
-	}
-	
-	.bg-accent {
-		background-color: var(--accent) !important;
-	}
-	
-	.input-field input[type=text].invalid + label {
-     color: var(--accent) !important;
-   }
-   .input-field input[type=text].invalid {
-     border-bottom: 1px solid var(--accent) !important;
-     box-shadow: 0 1px 0 0 var(--accent) !important;
-   }
-	
-	#ads {
-		al ign-self: flex-end;
-		width: 100%;
-		border-left: 0;
-		border-right:0;
-		margin:0;
-	}
-	
-	*dfgdfh:not(input) {
-		-webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; 
-	}
-	
-	html {
-		posi tion:fixed;
-		width:100%;
-	}
-	
-	html, body {
-		height:100%;
-		ove rflow:hidden;
-	}
-	
-	body {
-		opacity:0;
-	}
-	
-	.flex {
-		display: flex;
-		height: calc(100% - 56px);
-	}
-	
-	h1.flow-text {
-		line-height:56px;
-		margin:0 !important;
-	}
-	
-	article {
-		overflow: auto;
-		height:calc(100% - 56px);
-	}
-	
-	@media only screen and (max-width: 991px) {
-		table td {
-			text-align:center !important;
+		iframe {
+			border: 2px solid red;
 		}
-	}
-	
-	.uppercase {
-		text-transform: uppercase;
-	}
-	
-	@media only screen and (min-width: 601px) {
+
+		:root {
+			--primary: #424242;
+			--accent: #D50000;
+			--dark: #212121;
+			--light: #ffffff;
+		}
+
+		.mdi {
+			font-style: normal;
+		}
+
+		.text-light {
+			color: var(--light) !important;
+		}
+
+		.text-dark {
+			color: var(--primary) !important;
+		}
+
+		.text-accent {
+			color: var(--accent) !important;
+		}
+
+		.bg-primary {
+			background-color: var(--primary) !important;
+		}
+
+		.bg-accent {
+			background-color: var(--accent) !important;
+		}
+
+		.input-field input[type=text].invalid+label {
+			color: var(--accent) !important;
+		}
+
+		.input-field input[type=text].invalid {
+			border-bottom: 1px solid var(--accent) !important;
+			box-shadow: 0 1px 0 0 var(--accent) !important;
+		}
+
+		#ads {
+			align-self: flex-end;
+			width: 100%;
+			border-left: 0;
+			border-right: 0;
+			margin: 0;
+		}
+
+		*dfgdfh:not(input) {
+			-webkit-touch-callout: none;
+			/* iOS Safari */
+			-webkit-user-select: none;
+			/* Safari */
+			-khtml-user-select: none;
+			/* Konqueror HTML */
+			-moz-user-select: none;
+			/* Firefox */
+			-ms-user-select: none;
+			/* Internet Explorer/Edge */
+			user-select: none;
+		}
+
+		html {
+			position: fixed;
+			width: 100%;
+		}
+
+		html,
+		body {
+			height: 100%;
+			ove rflow: hidden;
+		}
+
+		body {
+			opacity: 0;
+		}
+
 		.flex {
-			height: calc(100% - 64px);
+			display: flex;
+			height: calc(100% - 56px);
 		}
-		
+
 		h1.flow-text {
-			line-height:64px;
-			margin:0 !important;
+			line-height: 56px;
+			margin: 0 !important;
 		}
-		
+
 		article {
 			overflow: auto;
-			height:calc(100% - 64px);
+			height: calc(100% - 56px);
 		}
-	}
-	
-	.hide-aside {
-		float:left;
-		margin: 0 18px;
-	}
-	
-	aside {
-		transition: margin 500ms;
-		overflow:hidden;
-		width:25%;
-		height:100%;
-	}
-	
-	aside.hidden {
-		margin: 0 0 0 -25%;
-	}
-	
-	a {
-		cursor: pointer;
-	}
-	
-	body.init {
-	opacity: 1;
-	animation-name: fadeInoOpacity;
-	animation-timing-function: ease-in;
-	animation-duration: 0.5s;
-  }
-  
-  @keyframes fadeInoOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-		
-	}
-}
 
-.slides .caption {
-	text-shadow: 2px 2px 4px #000000;
-}
+		@media only screen and (max-width: 991px) {
+			table td {
+				text-align: center !important;
+			}
+		}
 
-#preloader {
-background:rgba(255, 255, 255, 0.9);
-	position: absolute;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0;
-	z-index:99999;
-	display:none;
-}
+		.uppercase {
+			text-transform: uppercase;
+		}
 
-.progress {
-	margin:0 !important;
-}
+		@media only screen and (min-width: 601px) {
+			.flex {
+				height: calc(100% - 64px);
+			}
 
-red {
-	color:#D50000;
-}
+			h1.flow-text {
+				line-height: 64px;
+				margin: 0 !important;
+			}
 
-.bg-none {
-	background-color:inherit !important;
-}
+			article {
+				overflow: auto;
+				height: calc(100% - 64px);
+			}
+		}
 
-.collapsible a:hover{
-	background-color:#dddddd;
-}
+		.hide-aside {
+			float: left;
+			margin: 0 18px;
+		}
 
-.collapsible a.no-hover:hover{
-	background-color:inherit;
-	cursor:default;
-}
+		aside {
+			transition: margin 500ms;
+			overflow: hidden;
+			width: 25%;
+			height: 100%;
+		}
 
-.no-margin {
-	margin: 0 !important;
-}
+		aside.hidden {
+			margin: 0 0 0 -25%;
+		}
 
-.no-border {
-	border:0 !important;
-}
+		a {
+			cursor: pointer;
+		}
 
-.spacer-top {
-	padding-top:30px;
-}
+		body.init {
+			opacity: 1;
+			animation-name: fadeInoOpacity;
+			animation-timing-function: ease-in;
+			animation-duration: 0.5s;
+		}
 
-.spacer-bottom {
-	padding-bottom: 30px;
-}
+		@keyframes fadeInoOpacity {
+			0% {
+				opacity: 0;
+			}
 
-img {
-	vertical-align:middle;
-}
+			100% {
+				opacity: 1;
 
-.responsive-img {
-	width:100% !important;
-}
+			}
+		}
 
-.mdi {
-	font-size:16px !important;
-}
+		.slides .caption {
+			text-shadow: 2px 2px 4px #000000;
+		}
 
-#slide-out {
-	z-index:1001;
-}
+		#preloader {
+			background: rgba(255, 255, 255, 0.9);
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 99999;
+			display: none;
+		}
 
-.brand-logo .mdi {
-	margin:0 10px 0 10px !important;
-}
+		.progress {
+			margin: 0 !important;
+		}
 
-#search {
-	transition: width 250ms;
-	width:0 !important;
-}
+		red {
+			color: #D50000;
+		}
 
-#search:focus {
-	width:calc(100% - 4rem) !important;
-}
+		.bg-none {
+			background-color: inherit !important;
+		}
 
-#search ~ .material-icons {
-	z-index:-9999
-}
+		.collapsible a:hover {
+			background-color: #dddddd;
+		}
 
-#search:focus ~ .material-icons {
-	z-index:inherit
-}
+		.collapsible a.no-hover:hover {
+			background-color: inherit;
+			cursor: default;
+		}
 
-.sortable-table th:hover {
-	cursor:pointer;
-}
+		.no-margin {
+			margin: 0 !important;
+		}
 
-#canvas.sketch .canvas {
-	background-image: url(/img/bg_math.jpg);
-}
+		.no-border {
+			border: 0 !important;
+		}
+
+		.spacer-top {
+			padding-top: 30px;
+		}
+
+		.spacer-bottom {
+			padding-bottom: 30px;
+		}
+
+		img {
+			vertical-align: middle;
+		}
+
+		.responsive-img {
+			width: 100% !important;
+		}
+
+		.mdi {
+			font-size: 16px !important;
+		}
+
+		#slide-out {
+			z-index: 1001;
+		}
+
+		.brand-logo .mdi {
+			margin: 0 10px 0 10px !important;
+		}
+
+		#search {
+			transition: width 250ms;
+			width: 0 !important;
+		}
+
+		#search:focus {
+			width: calc(100% - 4rem) !important;
+		}
+
+		#search~.material-icons {
+			z-index: -9999
+		}
+
+		#search:focus~.material-icons {
+			z-index: inherit
+		}
+
+		.sortable-table th:hover {
+			cursor: pointer;
+		}
+
+		#canvas.sketch .canvas {
+			background-image: url(/img/bg_math.jpg);
+		}
 	</style>
 </head>
+
 <body>
 
 	{{{page.tpl}}}
-	
+
 	<div id="preloader">
 		<div class="progress">
 			<div class="indeterminate"></div>
 		</div>
 	</div>
-	
+
 	<noscript id="deferred-styles">
 		<link rel="stylesheet" href="/css/materialize.min.css" />
 		<link rel="stylesheet" href="/css/materialdesignicons.min.css" />
@@ -289,8 +305,8 @@ img {
 		<!--<link rel="stylesheet" href="/css/jquery.rateyo.css" />-->
 		<!--<link rel="stylesheet" href="/css/fullcalendar.css" />-->
 		<link rel="preload" as="style" href="/css/custom.css" />
-    </noscript>
-	
+	</noscript>
+
 	<script>
 		var loadDeferredStyles = function () {
 			var addStylesNode = document.getElementById('deferred-styles')
@@ -299,12 +315,12 @@ img {
 			document.body.appendChild(replacement)
 			addStylesNode.parentElement.removeChild(addStylesNode)
 		}
-		
+
 		var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame
 		if (raf) raf(function () { window.setTimeout(loadDeferredStyles, 0) })
 		else window.addEventListener('load', loadDeferredStyles)
 	</script>
-	
+
 	<script src="/js/jquery.js"></script>
 	<script src="/js/materialize.min.js"></script>
 	<!--<script src="/js/jquery.arctext.js"></script>
@@ -318,15 +334,16 @@ img {
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmiate9ep7mbOfxJkk0ndAGSGRe0HnqIc"></script>
 	<script type="text/javascript">
-	/*if ("serviceWorker" in navigator) {
-		navigator.serviceWorker.register('/service-worker.js')
-		.then(function (erfolg) {
-			console.log(erfolg)
-		})
-		.catch(function (fehler) {
-			console.log(fehler)
-		})
-	}*/
+		/*if ("serviceWorker" in navigator) {
+			navigator.serviceWorker.register('/service-worker.js')
+			.then(function (erfolg) {
+				console.log(erfolg)
+			})
+			.catch(function (fehler) {
+				console.log(fehler)
+			})
+		}*/
 	</script>
 </body>
+
 </html>
