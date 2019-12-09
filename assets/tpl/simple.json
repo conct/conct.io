@@ -1,0 +1,398 @@
+{
+	"header": {
+		"blocks": [{
+			"type": "h1",
+			"echo": "{{page.title}}"
+		}, {
+			"type": "div",
+			"id": "pushpinNav",
+			"blocks": [{
+				"type": "nav",
+				"class": "pushpin-nav",
+				"data-target": "pushpinNav",
+				"blocks": [{
+					"type": "div",
+					"class": "nav-wrapper",
+					"blocks": [{
+						"type": "a",
+						"title": "Menü anzeigen",
+						"class": "sidenav-trigger show-on-large",
+						"data-target": "slide-menu",
+						"blocks": [{
+							"type": "i",
+							"class": "mdi mdi-menu mdi-24px"
+						}]
+					}, {
+						"type": "ul",
+						"class": "right",
+						"blocks": [{
+							"type": "li",
+							"blocks": [{
+								"type": "a",
+								"title": "Hierhin navigieren",
+								"href": "geo:{{page.street}} {{page.no}}, {{page.zip}} {{page.city}}",
+								"blocks": [{
+									"type": "i",
+									"class": "iconify medium red",
+									"data-icon": "ic:baseline-phone"
+								}]
+							}]
+						}, {
+							"type": "li",
+							"blocks": [{
+								"type": "a",
+								"title": "WhatsApp schreiben",
+								"href": "https://wa.me/{{page.phonelink}}",
+								"blocks": [{
+									"type": "i",
+									"class": "iconify medium",
+									"data-icon": "logos:whatsapp"
+								}]
+							}]
+						}, {
+							"type": "li",
+							"blocks": [{
+								"type": "a",
+								"href": "tel:{{page.phonelink}}",
+								"title": "Jetzt anrufen",
+								"blocks": [{
+									"type": "i",
+									"class": "mdi mdi-phone mdi-24px text-accent"
+								}]
+							}]
+						}]
+					}]
+				}]
+			}]
+		}, {
+			"type": "nav",
+			"class": "z-depth-0",
+			"blocks": [{
+				"type": "div",
+				"class": "nav-wrapper",
+				"blocks": [{
+					"type": "ul",
+					"class": "left hide-on-small-only",
+					"blocks": [{
+						"type": "li",
+						"blocks": [{
+							"type": "a",
+							"class": "bg-none text-light",
+							"href": "/{{page.language}}",
+							"target": "_self",
+							"title": "Startseite",
+							"blocks": [{
+								"type": "i",
+								"class": "mdi mdi-home mdi-18px",
+								"echo": "{{#if (compare page.file '==' '/')}}Startseite{{/if}}"
+							}]
+						}]
+					}, {
+						"echo": "{{#if (compare page.file '!=' '/')}}{{#unless page.param}}"
+					}, {
+						"type": "li",
+						"blocks": [{
+							"type": "a",
+							"class": "bg-none text-light",
+							"href": "/{{page.language}}/{{page.file}}",
+							"target": "_self",
+							"title": "{{page.title}}",
+							"blocks": [{
+								"type": "i",
+								"class": "mdi mdi-link-variant mdi-18px",
+								"echo": "{{page.title}}"
+							}]
+						}]
+					}, {
+						"echo": "{{else}}"
+					}, {
+						"type": "li",
+						"blocks": [{
+							"type": "a",
+							"class": "bg-none text-light",
+							"href": "/{{page.language}}/{{page.file}}",
+							"title": "Zurück",
+							"target": "_self",
+							"blocks": [{
+								"type": "i",
+								"class": "mdi mdi-menu-left mdi-18px"
+							}]
+						}]
+					}, {
+						"type": "li",
+						"blocks": [{
+							"type": "a",
+							"class": "bg-none text-light",
+							"href": "/{{page.language}}/{{page.file}}/{{page.param}}",
+							"target": "_self",
+							"title": "{{page.title}}",
+							"blocks": [{
+								"type": "i",
+								"class": "mdi mdi-link-variant mdi-18px",
+								"echo": "{{page.title}}"
+							}]
+						}]
+					}, {
+						"echo": "{{/unless}}{{/if}}"
+					}]
+				}, {
+					"type": "ul",
+					"class": "right",
+					"blocks": [{
+						"type": "li",
+						"blocks": [{
+							"type": "a",
+							"class": "dropdown-trigger uppercase text-light bg-none",
+							"data-target": "languageSelect",
+							"title": "Sprache",
+							"blocks": [{
+								"type": "i",
+								"class": "mdi mdi-menu-down mdi-24px right no-margin"
+							}, {
+								"echo": "{{page.language}}"
+							}]
+						}]
+					}, {
+						"type": "li",
+						"blocks": [{
+							"type": "a",
+							"class": "dropdown-trigger text-light bg-none",
+							"data-target": "shareSelect",
+							"title": "Teilen",
+							"blocks": [{
+								"type": "i",
+								"class": "mdi mdi-share-variant mdi-24px"
+							}]
+						}]
+					}, {
+						"type": "li",
+						"blocks": [{
+							"type": "a",
+							"class": "bg-none text-light",
+							"target": "_fullscreen",
+							"title": "Vollbild",
+							"blocks": [{
+								"type": "i",
+								"class": "mdi mdi-fullscreen mdi-24px"
+							}]
+						}]
+					}]
+				}]
+			}]
+		}, {
+			"type": "ul",
+			"id": "slide-menu",
+			"class": "sidenav",
+			"blocks": [{
+				"type": "li",
+				"blocks": [{
+					"type": "div",
+					"class": "user-view bg-primary white-text",
+					"blocks": [{
+						"type": "p",
+						"class": "center-align",
+						"echo": "{{#if page.company}}{{page.company}}{{else}}{{page.owner}}{{/if}}<br />{{page.street}} {{page.no}}<br />{{page.zip}} {{page.city}}<br /><br />{{page.email}}<br /><br />",
+						"blocks": [{
+							"type": "a",
+							"class": "btn-small waves-effect bg-accent text-white",
+							"href": "tel:{{page.phonelink}}",
+							"title": "Jetzt anrufen",
+							"blocks": [{
+								"type": "i",
+								"class": "mdi mdi-phone",
+								"echo": " Jetzt anrufen"
+							}]
+						}]
+					}]
+				}]
+			}, {
+				"type": "li",
+				"blocks": [{
+					"type": "a",
+					"class": "waves-effect",
+					"href": "/{{page.language}}",
+					"target": "_self",
+					"title": "Startseite",
+					"blocks": [{
+						"type": "i",
+						"class": "mdi mdi-home"
+					}, {
+						"echo": "Startseite"
+					}]
+				}]
+			}, {
+				"type": "li",
+				"blocks": [{
+					"type": "div",
+					"class": "divider"
+				}]
+			}, {
+				"type": "li",
+				"blocks": [{
+					"type": "span",
+					"class": "subheader",
+					"echo": "Händlerseiten"
+				}]
+			}, {
+				"type": "li",
+				"blocks": [{
+					"type": "a",
+					"class": "waves-effect",
+					"target": "_blank",
+					"rel": "nofollow",
+					"href": "https://subaru-giessen.de/",
+					"title": "Link zu Subaru",
+					"blocks": [{
+						"type": "i",
+						"class": "mdi mdi-open-in-new"
+					}, {
+						"echo": "Subaru"
+					}]
+				}]
+			}, {
+				"type": "li",
+				"blocks": [{
+					"type": "a",
+					"class": "waves-effect",
+					"target": "_blank",
+					"rel": "nofollow",
+					"href": "https://ssangyong-menz.de/",
+					"title": "Link zu SsangYong",
+					"blocks": [{
+						"type": "i",
+						"class": "mdi mdi-open-in-new"
+					}, {
+						"echo": "SsangYong"
+					}]
+				}]
+			}, {
+				"type": "li",
+				"blocks": [{
+					"type": "div",
+					"class": "divider"
+				}]
+			}, {
+				"type": "li",
+				"blocks": [{
+					"type": "a",
+					"class": "waves-effect",
+					"target": "_self",
+					"title": "Impressum",
+					"href": "/{{page.language}}/imprint",
+					"blocks": [{
+						"type": "i",
+						"class": "mdi mdi-information"
+					}, {
+						"echo": "Impressum"
+					}]
+				}]
+			}, {
+				"type": "li",
+				"blocks": [{
+					"type": "a",
+					"class": "waves-effect",
+					"target": "_self",
+					"href": "/{{page.language}}/privacy",
+					"title": "Datenschutz",
+					"blocks": [{
+						"type": "i",
+						"class": "mdi mdi-shield"
+					}, {
+						"echo": "Datenschutz"
+					}]
+				}]
+			}]
+		}]
+	},
+	"main": {
+		"echo": "{{{page.html}}}"
+	},
+	"footer": {
+		"class": "page-footer",
+		"blocks": [{
+			"type": "div",
+			"class": "container",
+			"blocks": [{
+				"type": "div",
+				"class": "row",
+				"blocks": [{
+					"type": "div",
+					"class": "col s12 l6",
+					"blocks": [{
+						"type": "h5",
+						"class": "text-white",
+						"echo": "Kontakt"
+					}]
+				}, {
+					"type": "div",
+					"class": "col s12 l4 offset-l2",
+					"blocks": [{
+						"type": "h5",
+						"class": "text-white",
+						"echo": "Links"
+					}, {
+						"type": "ul",
+						"blocks": [{
+							"type": "li",
+							"blocks": [{
+								"type": "a",
+								"class": "grey-text text-lighten-3",
+								"target": "_self",
+								"title": "Impressum",
+								"href": "/{{page.language}}/imprint",
+								"echo": "Impressum"
+							}]
+						}, {
+							"type": "li",
+							"blocks": [{
+								"type": "a",
+								"class": "grey-text text-lighten-3",
+								"target": "_self",
+								"title": "Datenschutz",
+								"href": "/{{page.language}}/privacy",
+								"echo": "Datenschutz"
+							}]
+						}]
+					}]
+				}]
+			}]
+		}, {
+			"type": "div",
+			"class": "footer-copyright",
+			"blocks": [{
+				"type": "div",
+				"class": "container",
+				"blocks": [{
+					"type": "div",
+					"class": "row no-margin",
+					"blocks": [{
+						"type": "div",
+						"class": "col l6 s12",
+						"blocks": [{
+							"type": "i",
+							"class": "iconify small",
+							"data-icon": "mdi:copyright"
+						}, {
+							"echo": " {{date 'now' 'YYYY'}} {{page.host}}"
+						}]
+					}, {
+						"type": "div",
+						"class": "col l4 offset-l2 s12",
+						"blocks": [{
+							"type": "a",
+							"class": "grey-text text-lighten-3",
+							"title": "Powered by conct",
+							"blocks": [{
+								"type": "i",
+								"class": "iconify small",
+								"data-icon": "whh:website"
+							}, {
+								"echo": " by conct"
+							}]
+						}]
+					}]
+				}]
+			}]
+		}]
+	}
+}

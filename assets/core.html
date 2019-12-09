@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="{{page.language}}">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+	<title>{{page.title}}</title>
+	
+	<!--base href="/{{page.language}}" /-->
+	
+	<meta charset="utf-8" />
+	<meta name="robots" content="noimageindex, {{#if page.root}}noindex, follow{{else}}{{#if (strpos page.file 'imprint, privacy')}}noindex, follow{{else}}index, follow{{/if}}{{/if}}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
+	<meta name="description" content="{{page.description}}" />
+	<meta name="copyright" content="{{page.host}}" />
+	<meta name="theme-color" content="#424242" />
+	<meta property="og:title" content="{{page.title}}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="{{page.description}}" />
+	<meta property="og:image" content="//{{page.host}}/img/{{page.label}}" />
+	<meta property="og:url" content="//{{page.host}}/{{page.language}}{{#if page.canonical}}/{{page.canonical}}{{else}}{{#if (compare page.file '!=' '/')}}/{{page.file}}{{/if}}{{#if page.param}}/{{page.param}}{{/if}}{{/if}}" />
+	<!--meta property="fb:app_id" content="" /-->
+	
+	<link rel="canonical" href="//{{page.host}}/{{page.language}}{{#if page.canonical}}/{{page.canonical}}{{else}}{{#if (compare page.file '!=' '/')}}/{{page.file}}{{/if}}{{#if page.param}}/{{page.param}}{{/if}}{{/if}}" />
+	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	{{#if page.android}}<link rel="shortcut icon" href="data:image/png;base64,{{page.android}}" sizes="196x196" />{{/if}}
+	{{#if page.ios}}<link rel="apple-touch-icon" href="data:image/png;base64,{{page.ios}}" sizes="196x196" />{{/if}}
+	
+	<style type="text/css">
+		body { opacity:0 }
+	</style>
+</head>
+<body>
+
+	{{{page.tpl}}}
+	
+	<div id="preloader">
+		<div class="progress">
+			<div class="indeterminate"></div>
+		</div>
+	</div>
+	
+	<ul id="shareSelect" class="dropdown-content">
+				
+					<li>
+					<a target="_copy" data-toast="Link in Zwischenablage kopiert"><i class="mdi mdi-content-copy no-margin"></i>Link kopieren</a>
+				</li>
+					<li>
+					<a href="mailto:?subject={{page.title}}&body=https://{{page.host}}/{{page.language}}{{#if page.path}}/{{page.path}}{{/if}}"><i class="mdi mdi-at no-margin"></i>Email senden</a>
+				</li>
+			</ul>
+			<ul id="languageSelect" class="dropdown-content">
+				<li><a href="/de{{#if page.path}}/{{page.path}}{{/if}}" class="text-accent">Deutsch</a></li>
+				<li><a href="/en{{#if page.path}}/{{page.path}}{{/if}}" class="text-accent">English</a></li>
+			</ul>
+
+	<script src="/js/jquery.js"></script>
+	<script src="/js/materialize.min.js"></script>
+	<!--<script src="/js/moment.js"></script>-->
+	<script src="/js/lazyload.js"></script>
+	<!--<script src="/js/jcanvas.js"></script>-->
+	<!--<script src="/js/jquery.tablesorter.min.js"></script>-->
+	<script src="/js/mat.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/sw.js')
+		.then(function (e) {
+			console.log(e)
+		})
+		.catch(function (err) {
+			console.log(err)
+		})
+	}
+	</script>
+</body>
+</html>
